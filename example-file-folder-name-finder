@@ -1,5 +1,6 @@
 #!/bin/bash
-# Jason Pittman - Scott Stout August 2019
+# Jason Pittman - August 2019
+# for use as an extention atribute within JAMF 
 
 currentUser=`ls -l /dev/console | cut -d " " -f 4`
 search=$( mdfind -onlyin /Users/$currentUser -interpret -name "example-file-folder-name" )
