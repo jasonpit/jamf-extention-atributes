@@ -1,0 +1,17 @@
+#!/bin/sh
+
+## Jason Pittman 2019 Fullscreen IT
+## search user home for files named similarly "Film - Monetization Titles - Tranche Lists 1-4"    
+
+## get currnet user 
+currentUser=`ls -l /dev/console | cut -d " " -f 4`
+
+## search current user home for files named "" via apples mdfind tool   
+if mdfind -onlyin /Users/$currentUser -name "Film - Monetization Titles - Tranche Lists 1-4"  ; then
+
+## report present or not, rper machine results will be reported via JAMF
+STATUS="present"
+else
+STATUS="not present"
+fi
+echo "<result>$STATUS</result>"
